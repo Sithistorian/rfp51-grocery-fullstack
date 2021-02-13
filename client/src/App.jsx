@@ -1,5 +1,7 @@
 import React from 'react';
+import GroceryList from './GroceryList.jsx';
 import $ from 'jquery';
+
 
 class App extends React.Component {
 
@@ -11,12 +13,14 @@ class App extends React.Component {
     this.getGroceryList = this.getGroceryList.bind(this);
   }
 
+
+  //Initialization
   getGroceryList () {
     console.log('component did trigger');
 
     $.ajax({
 
-      url: 'localhost:8080/list',
+      url: 'http://localhost:8080/list',
 
       method: 'GET',
 
@@ -31,8 +35,6 @@ class App extends React.Component {
       errCB: (err) => {
         console.log(err);
       }
-    }).done((response) => {
-      console.log('Respons', response)
     })
 
   }
@@ -41,12 +43,9 @@ class App extends React.Component {
     this.getGroceryList()
   }
 
-
-
-
   render () {
     return (
-      <div>React is working great!</div>
+      <div><GroceryList groceries={this.state.groceryList}/></div>
     )
   }
 }
