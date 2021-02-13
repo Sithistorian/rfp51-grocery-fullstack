@@ -5,3 +5,10 @@
  CREATE DATABASE IF NOT EXISTS groceryList;
 
  USE groceryList;
+
+
+CREATE TABLE IF NOT EXISTS list (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  item VARCHAR(200),
+  quantity INT
+);
