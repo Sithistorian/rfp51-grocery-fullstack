@@ -16,7 +16,7 @@ app.listen(port, () => {
 
 //routes
 
-app.get('/', routes.get);
+app.get('/list', routes.get);
 
 
 
