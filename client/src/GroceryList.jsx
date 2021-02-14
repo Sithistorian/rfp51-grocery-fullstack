@@ -1,8 +1,22 @@
 import React from 'react';
+import GroceryListEntry from './GroceryListEntry.jsx';
 
-function GroceryList (props) {
+function GroceryList ({groceries}) {
 
-  return <div>Hey</div>
+  return (
+
+    <ol>
+
+      {
+      groceries.map((item) => {
+      return <li key={item.id}><GroceryListEntry item={item}/></li>
+      })
+      }
+
+    </ol>
+
+
+  )
 
 
 }

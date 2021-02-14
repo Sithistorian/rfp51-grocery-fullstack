@@ -16,7 +16,6 @@ class App extends React.Component {
 
   //Initialization
   getGroceryList () {
-    console.log('component did trigger');
 
     $.ajax({
 
@@ -25,7 +24,6 @@ class App extends React.Component {
       method: 'GET',
 
       success: (data) => {
-        console.log("data", data);
         this.setState({
           groceryList: data
         })
